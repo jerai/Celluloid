@@ -1,5 +1,7 @@
 package trakt;
 
+import android.os.AsyncTask;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -7,11 +9,13 @@ import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
 
-public class Conexion {
+public class Conexion extends AsyncTask<URL, Void, String> {
 	
-	private static String client_id = "b34b7fa294766d118a9d1b05995121d52dcc5ed3407a28b1274c3dc8d34cd924";
-	
-	public static String getJSON(URL url) {
+	private String client_id = "b34b7fa294766d118a9d1b05995121d52dcc5ed3407a28b1274c3dc8d34cd924";
+
+	@Override
+	protected String doInBackground(URL... urls) {
+		URL url = urls[0];
 		HttpsURLConnection con = null;
 		try {
 			con = (HttpsURLConnection)url.openConnection();

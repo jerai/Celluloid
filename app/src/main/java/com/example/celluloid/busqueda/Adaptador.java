@@ -5,7 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.celluloid.R;
 
@@ -33,6 +35,10 @@ public class Adaptador extends BaseAdapter {
 
         TextView textView = (TextView) vista.findViewById(R.id.nombreResultado);
         textView.setText(listaResultados.get(position).getMovie().getTitle());
+
+        ImageView imageView = vista.findViewById(R.id.imagenResultado);
+
+
 
 
         return vista;

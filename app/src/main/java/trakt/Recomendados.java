@@ -21,14 +21,14 @@ public class Recomendados {
 	}
 
 	public static List<Movie> popular(){
-		try {
+		/*try {
 			String data = Conexion.getJSON(new URL("https://api.trakt.tv/movies/popular"));
 			Movie[] listaMovies = new Gson().fromJson(data, Movie[].class);
 			List<Movie> list = Arrays.asList(listaMovies);
 			return list;
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
-		}
+		}*/
 		return null;
 	}
 
